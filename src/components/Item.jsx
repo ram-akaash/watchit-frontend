@@ -19,13 +19,9 @@ const Item = ({ item, width }) => {
   const { category, price, name, image } = item.attributes;
   const {
     data: {
-      attributes: {
-        formats: {
-          medium: { url },
-        },
-      },
+        attributes: { url },
     },
-  } = image;
+} = image;
 
   return (
     <Box width={width}>
@@ -38,7 +34,7 @@ const Item = ({ item, width }) => {
           alt={item.name}
           width="300px"
           height="400px"
-          src={`http://localhost:2000${url}`}
+          src={`http://localhost:1337 ${url}`}
           onClick={() => navigate(`/item/${item.id}`)}
           style={{ cursor: "pointer" }}
         />
@@ -84,7 +80,7 @@ const Item = ({ item, width }) => {
             .replace(/^./, (str) => str.toUpperCase())}
         </Typography>
         <Typography>{name}</Typography>
-        <Typography fontWeight="bold">${price}</Typography>
+        <Typography fontWeight="bold">Rs.{price}</Typography>
       </Box>
     </Box>
   );
