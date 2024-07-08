@@ -18,7 +18,7 @@ const Item = ({ item, width }) => {
 
   const { category, price, name,image } = item.attributes;
  const {url}=image.data.attributes;
- console.log(url);
+ 
   
 
   return (
